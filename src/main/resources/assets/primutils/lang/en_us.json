@@ -1,0 +1,21 @@
+{
+  "primutils.jei.millstone.title": "Millstone",
+  "primutils.jei.millstone.chance_tooltip": "Chance: %s%%",
+  "primutils.jei.millstone.useAmount": "%s Rotations Required",
+  "primutils.jei.drying_rack.title": "Drying Rack",
+  "primutils.jei.drying_rack.duration": "Duration: %s Ticks",
+  "primutils.jei.chopping_block.title": "Chopping Block",
+  "primutils.jei.chopping_block.duration": "Chop %s Times",
+  "primutils.jei.basin.title": "Basin",
+  "primutils.jei.basin.fluidAmount": "%smb",
+  "primutils.jei.basin.stirAmount": "Stir %s Times",
+  "itemGroup.primutils": "Primitive Utils",
+  "block.primutils.millstone": "Millstone",
+  "primutils.tooltip.millstone": "Right click with an item to add item. Right click with empty hand to rotate. Sneak right click to take item out. All sides support hopper/pipes insertion.",
+  "block.primutils.drying_rack": "Drying Rack",
+  "primutils.tooltip.drying_rack": "Right click with an item to add item. Sneak right click to take item out. Items will be dried overtime. All sides support hopper/pipes insertion.",
+  "block.primutils.chopping_block": "Chopping Block",
+  "primutils.tooltip.chopping_block": "Right click with an item to add item. Sneak right click to take item out. Right click with an axe to chop. All sides support hopper/pipes insertion.",
+  "block.primutils.basin": "Wooden Basin",
+  "primutils.tooltip.basin": "Right click with an item to add item. Sneak right click to take item out. Max 4 items can be added. Right click with fluid containers to add/remove fluid. All sides support hopper/pipes insertion for items and fluids."
+}

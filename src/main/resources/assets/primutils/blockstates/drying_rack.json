@@ -1,0 +1,25 @@
+{
+  "variants": {
+    "facing=north": {
+      "model": "primutils:block/drying_rack"
+    },
+    "facing=south": {
+      "y": 180,
+      "model": "primutils:block/drying_rack"
+    },
+    "facing=west": {
+      "y": 270,
+      "model": "primutils:block/drying_rack"
+    },
+    "facing=east": {
+      "y": 90,
+      "model": "primutils:block/drying_rack"
+    },
+    "facing=up": {
+      "model": "primutils:block/drying_rack"
+    },
+    "facing=down": {
+      "model": "primutils:block/drying_rack"
+    }
+  }
+}

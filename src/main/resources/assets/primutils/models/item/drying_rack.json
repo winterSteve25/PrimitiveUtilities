@@ -1,0 +1,38 @@
+{
+	"parent": "primutils:block/drying_rack",
+	"display": {
+		"thirdperson_righthand": {
+			"translation": [0, 0.5, 1.25],
+			"scale": [0.38, 0.38, 0.38]
+		},
+		"thirdperson_lefthand": {
+			"translation": [0, 0.5, 1.25],
+			"scale": [0.38, 0.38, 0.38]
+		},
+		"firstperson_righthand": {
+			"rotation": [9, 19, 0],
+			"translation": [-0.75, 3.5, 0],
+			"scale": [0.59, 0.59, 0.59]
+		},
+		"firstperson_lefthand": {
+			"rotation": [9, 19, 0],
+			"translation": [-0.75, 3.5, 0],
+			"scale": [0.59, 0.59, 0.59]
+		},
+		"ground": {
+			"scale": [0.53, 0.53, 0.53]
+		},
+		"gui": {
+			"rotation": [27, 28, 0],
+			"translation": [0, 3.25, 0],
+			"scale": [0.68, 0.68, 0.68]
+		},
+		"head": {
+			"translation": [0, 14.5, 0]
+		},
+		"fixed": {
+			"rotation": [-90, 0, 0],
+			"translation": [0, 0, -4.75]
+		}
+	}
+}

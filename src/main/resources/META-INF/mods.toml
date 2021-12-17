@@ -1,0 +1,23 @@
+modLoader="javafml" #mandatory
+loaderVersion="[36,)" #mandatory This is typically bumped every Minecraft version by Forge. See our download page for lists of versions.
+license="MIT"
+[[mods]] #mandatory
+modId="primutils" #mandatory
+version="${file.jarVersion}" #mandatory
+displayName="PrimitiveUtils" #mandatory
+updateJSONURL="" #optional
+authors="winterSteve25" #optional
+description='''
+'''
+[[dependencies.primutils]] #optional
+   modId="forge" #mandatory
+   mandatory=true #mandatory
+   versionRange="[36,)" #mandatory
+   ordering="NONE"
+   side="BOTH"
+[[dependencies.primutils]]
+    modId="minecraft"
+    mandatory=true
+    versionRange="[1.16.4,)"
+    ordering="NONE"
+    side="BOTH"

@@ -1,0 +1,54 @@
+{
+	"format_version": "1.8.0",
+	"animations": {
+		"animation.basin.stir": {
+			"animation_length": 2,
+			"bones": {
+				"stick": {
+					"rotation": {
+						"0.0": {
+							"vector": [0, 0, 0]
+						},
+						"0.5": {
+							"vector": [0, -82.5, 0],
+							"easing": "linear"
+						},
+						"1.0": {
+							"vector": [0, -167.5, 0],
+							"easing": "linear"
+						},
+						"1.5": {
+							"vector": [0, -255, 0],
+							"easing": "linear"
+						},
+						"2.0": {
+							"vector": [0, -350, 0],
+							"easing": "linear"
+						}
+					},
+					"position": {
+						"0.0": {
+							"vector": [0, 0, 0]
+						},
+						"0.5": {
+							"vector": [1, 0, -6],
+							"easing": "linear"
+						},
+						"1.0": {
+							"vector": [6, 0, -6],
+							"easing": "linear"
+						},
+						"1.5": {
+							"vector": [6, 0, -1],
+							"easing": "linear"
+						},
+						"2.0": {
+							"vector": [0, 0, 0],
+							"easing": "linear"
+						}
+					}
+				}
+			}
+		}
+	}
+}

@@ -1,0 +1,25 @@
+{
+  "variants": {
+    "facing=north": {
+      "model": "primutils:block/millstone"
+    },
+    "facing=south": {
+      "y": 180,
+      "model": "primutils:block/millstone"
+    },
+    "facing=west": {
+      "y": 270,
+      "model": "primutils:block/millstone"
+    },
+    "facing=east": {
+      "y": 90,
+      "model": "primutils:block/millstone"
+    },
+    "facing=up": {
+      "model": "primutils:block/millstone"
+    },
+    "facing=down": {
+      "model": "primutils:block/millstone"
+    }
+  }
+}
