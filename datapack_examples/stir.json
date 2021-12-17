@@ -1,0 +1,24 @@
+{
+  "type": "primutils:stirring",
+  "inputs": [
+    {
+      "tag": "forge:ingots/iron"
+    },
+    {
+      "tag": "forge:ingots/iron"
+    }
+  ],
+  "stirAmounts": 2,
+  "input_fluid": {
+    "tag": "minecraft:water",
+    "amount": 4000
+  },
+  "output": [
+    {
+      "item": "minecraft:iron_ingot"
+    },
+    {
+      "item": "minecraft:diamond"
+    }
+  ]
+}

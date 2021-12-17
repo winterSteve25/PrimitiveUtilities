@@ -1,0 +1,10 @@
+{
+  "type": "primutils:drying",
+  "input": {
+    "tag": "forge:ingots/gold"
+  },
+  "duration": 200,
+  "output": {
+    "item": "minecraft:diamond"
+  }
+}

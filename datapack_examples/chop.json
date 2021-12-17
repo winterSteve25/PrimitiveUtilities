@@ -1,0 +1,10 @@
+{
+  "type": "primutils:chopping",
+  "input": {
+    "tag": "forge:ingots/gold"
+  },
+  "chopAmounts": 2,
+  "output": {
+    "item": "minecraft:diamond"
+  }
+}

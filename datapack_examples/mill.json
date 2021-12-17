@@ -1,0 +1,21 @@
+{
+  "type": "primutils:milling",
+  "input": {
+    "tag": "forge:ingots/gold"
+  },
+  "total_progress": 2,
+  "output": [
+    {
+      "result": {
+        "item": "minecraft:iron_ingot"
+      },
+      "chance": 100
+    },
+    {
+      "result": {
+        "item": "minecraft:diamond"
+      },
+      "chance": 100
+    }
+  ]
+}
