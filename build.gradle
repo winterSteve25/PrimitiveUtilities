@@ -81,6 +81,10 @@ repositories {
     maven { url 'https://modmaven.dev/' }
     maven { url 'https://dl.cloudsmith.io/public/geckolib3/geckolib/maven/' }
 
+    maven {
+        url "https://maven.blamejared.com"
+    }
+
     mavenLocal()
 }
 
@@ -91,6 +95,7 @@ dependencies {
     implementation fg.deobf('software.bernie.geckolib:geckolib-forge-1.16.5:3.0.40')
     implementation fg.deobf("mezz.jei:jei-${jei_version}")
     compileOnly fg.deobf("mezz.jei:jei-${jei_version}:api")
+    compile fg.deobf("com.blamejared.crafttweaker:CraftTweaker-1.16.5:${ct_version}")
 }
 
 // Example for how to get properties into the manifest for reading by the runtime..

@@ -21,3 +21,15 @@ description='''
     versionRange="[1.16.4,)"
     ordering="NONE"
     side="BOTH"
+[[dependencies.primutils]]
+    modId="fclib"
+    mandatory=true
+    versionRange="[2.3.16,)"
+    ordering="NONE"
+    side="BOTH"
+[[dependencies.primutils]]
+    modId="geckolib3"
+    mandatory=true
+    versionRange="[3.0.40,)"
+    ordering="NONE"
+    side="BOTH"    

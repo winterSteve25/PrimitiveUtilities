@@ -64,6 +64,8 @@ public class MillStoneTileEntity extends PrimUtilsTE implements IAnimatable, IHa
                     totalProgress = -1;
                     progress = totalProgress;
                     operationProgress = TICKS_FOR_ONE_OPERATION;
+
+                    setupRecipe();
                 }
                 setWorking(false);
             }
@@ -104,7 +106,7 @@ public class MillStoneTileEntity extends PrimUtilsTE implements IAnimatable, IHa
                         ((ServerWorld) getWorld()).spawnParticle(ParticleTypes.CLOUD, pos.getX() + 0.5, pos.getY() + 0.8, pos.getZ() + 0.5, 4, 0, 0, 0, 0.4d);
                     }
                     getWorld().playSound(null, pos, SoundEvents.ENTITY_EXPERIENCE_ORB_PICKUP, SoundCategory.BLOCKS, 1.0F, 1f);
-                    InventoryHelper.spawnItemStack(getWorld(), pos.getX(), (double)pos.getY() + 0.5, pos.getZ(), stack.copy());
+                    InventoryHelper.spawnItemStack(getWorld(), pos.getX(), (double) pos.getY() + 0.5, pos.getZ(), stack.copy());
                 } else {
                     getWorld().playSound(null, pos, SoundEvents.BLOCK_FIRE_EXTINGUISH, SoundCategory.BLOCKS, 1.0F, 1f);
                 }
@@ -130,6 +132,7 @@ public class MillStoneTileEntity extends PrimUtilsTE implements IAnimatable, IHa
         if (!player.isSneaking() && player.getHeldItem(handIn).isEmpty() && !getWorking() && progress != 0) {
             if (itemHandler.getStackInSlot(0).isEmpty()) return;
             if (checkRecipe()) {
+                setupRecipe();
                 getWorld().playSound((PlayerEntity) null, pos, SoundEvents.BLOCK_GRINDSTONE_USE, SoundCategory.BLOCKS, 1.0F, 1f);
                 setWorking(true);
                 updateBlock();
