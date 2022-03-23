@@ -4,7 +4,6 @@ import com.google.common.collect.ImmutableMap;
 import fictioncraft.wintersteve25.fclib.common.helper.MiscHelper;
 import fictioncraft.wintersteve25.fclib.common.interfaces.IHasProgress;
 import fictioncraft.wintersteve25.fclib.common.interfaces.IWorkable;
-import javafx.util.Pair;
 import net.minecraft.block.BlockState;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.inventory.InventoryHelper;
@@ -16,6 +15,7 @@ import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.Hand;
 import net.minecraft.util.SoundCategory;
 import net.minecraft.util.SoundEvents;
+import net.minecraft.util.Tuple;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.BlockRayTraceResult;
 import net.minecraft.world.World;
@@ -57,7 +57,7 @@ public class MillStoneTileEntity extends PrimUtilsTE implements IAnimatable, IHa
                 operationProgress = TICKS_FOR_ONE_OPERATION;
                 progress--;
                 if (progress == 0) {
-                    IMillstoneRecipe recipe = getRecipe(itemHandler.getStackInSlot(0)).getValue();
+                    IMillstoneRecipe recipe = getRecipe(itemHandler.getStackInSlot(0)).getB();
                     if (recipe == null) return;
                     spawnOutput(recipe.getOutput());
                     itemHandler.extractItem(0, recipe.getInput().getMatchingStacks()[0].getCount(), false);
@@ -79,7 +79,7 @@ public class MillStoneTileEntity extends PrimUtilsTE implements IAnimatable, IHa
     }
 
     private void setupRecipe() {
-        IMillstoneRecipe recipe = getRecipe(itemHandler.getStackInSlot(0)) == null ? null : getRecipe(itemHandler.getStackInSlot(0)).getValue();
+        IMillstoneRecipe recipe = getRecipe(itemHandler.getStackInSlot(0)) == null ? null : getRecipe(itemHandler.getStackInSlot(0)).getB();
         if (recipe != null) {
             if (totalProgress == -1) {
                 totalProgress = recipe.getTotalProgress();
@@ -94,7 +94,7 @@ public class MillStoneTileEntity extends PrimUtilsTE implements IAnimatable, IHa
     }
 
     private boolean checkRecipe() {
-        IMillstoneRecipe recipe = getRecipe(itemHandler.getStackInSlot(0)) == null ? null : getRecipe(itemHandler.getStackInSlot(0)).getValue();
+        IMillstoneRecipe recipe = getRecipe(itemHandler.getStackInSlot(0)) == null ? null : getRecipe(itemHandler.getStackInSlot(0)).getB();
         return recipe != null;
     }
 
@@ -114,14 +114,14 @@ public class MillStoneTileEntity extends PrimUtilsTE implements IAnimatable, IHa
         }
     }
 
-    public Pair<ImmutableMap<ItemStack, Byte>, IMillstoneRecipe> getRecipe(ItemStack input) {
+    public Tuple<ImmutableMap<ItemStack, Byte>, IMillstoneRecipe> getRecipe(ItemStack input) {
         if (input.isEmpty()) return null;
         if (getWorld() == null) return null;
         List<IMillstoneRecipe> recipes = getWorld().getRecipeManager().getRecipesForType(PrimUtilsRecipes.MILLSTONE_RT);
         if (recipes.isEmpty()) return null;
         for (IMillstoneRecipe millstoneRecipe : recipes) {
             if (millstoneRecipe.match(input)) {
-                return new Pair<>(millstoneRecipe.getOutput(), millstoneRecipe);
+                return new Tuple<>(millstoneRecipe.getOutput(), millstoneRecipe);
             }
         }
         return null;
