@@ -1,0 +1,23 @@
+{
+  "type": "primutils:milling",
+  "total_progress": 5,
+  "input": {
+    "item": "minecraft:andesite_wall"
+  },
+  "output": [
+    {
+      "result": {
+        "item": "minecraft:iron_ingot",
+        "count": 2
+      },
+      "chance": 100
+    },
+    {
+      "result": {
+        "item": "minecraft:diamond",
+        "count": 4
+      },
+      "chance": 20
+    }
+  ]
+}

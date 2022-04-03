@@ -1,0 +1,20 @@
+{
+  "type": "primutils:stirring",
+  "stirAmounts": 5,
+  "inputs": [
+    {
+      "item": "minecraft:andesite_wall",
+      "count": 6
+    }
+  ],
+  "output": [
+    {
+      "item": "minecraft:iron_ingot",
+      "count": 2
+    }
+  ],
+  "input_fluid": {
+    "name": "minecraft:water",
+    "amount": 250
+  }
+}
