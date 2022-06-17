@@ -1,6 +1,7 @@
 package wintersteve25.primutils.client;
 
 import com.mojang.blaze3d.matrix.MatrixStack;
+import net.minecraft.block.BlockState;
 import net.minecraft.block.DirectionalBlock;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.renderer.IRenderTypeBuffer;
@@ -28,7 +29,9 @@ public class DryingRackTESR extends TileEntityRenderer<DryingRackTileEntity> {
             ItemStack inputItem3 = dryingRack.getItemHandler().getStackInSlot(2).isEmpty() ? dryingRack.getOutputHandler().getStackInSlot(2) : dryingRack.getItemHandler().getStackInSlot(2);
             ItemStack inputItem4 = dryingRack.getItemHandler().getStackInSlot(3).isEmpty() ? dryingRack.getOutputHandler().getStackInSlot(3) : dryingRack.getItemHandler().getStackInSlot(3);
 
-            Direction direction = dryingRack.getWorld().getBlockState(dryingRack.getPos()).get(DirectionalBlock.FACING);
+            BlockState state = dryingRack.getWorld().getBlockState(dryingRack.getPos());
+            if (!state.hasProperty(DirectionalBlock.FACING)) return;
+            Direction direction = state.get(DirectionalBlock.FACING);
 
             switch (direction) {
                 default:

@@ -1,6 +1,7 @@
 package wintersteve25.primutils.client;
 
 import com.mojang.blaze3d.matrix.MatrixStack;
+import net.minecraft.block.BlockState;
 import net.minecraft.block.DirectionalBlock;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.renderer.IRenderTypeBuffer;
@@ -24,7 +25,12 @@ public class ChoppingBlockTESR extends TileEntityRenderer<ChoppingBlockTileEntit
             ItemRenderer itemRenderer = Minecraft.getInstance().getItemRenderer();
             ItemStack inputItem = tile.getItemHandler().getStackInSlot(0);
             matrixStack.push();
-            setupMatrix(matrixStack, tile.getWorld().getBlockState(tile.getPos()).get(DirectionalBlock.FACING), itemRenderer.getItemModelWithOverrides(inputItem, tile.getWorld(), null).isGui3d());
+
+            BlockState state = tile.getWorld().getBlockState(tile.getPos());
+            if (!state.hasProperty(DirectionalBlock.FACING)) return;
+            Direction direction = state.get(DirectionalBlock.FACING);
+
+            setupMatrix(matrixStack, direction, itemRenderer.getItemModelWithOverrides(inputItem, tile.getWorld(), null).isGui3d());
             itemRenderer.renderItem(inputItem, ItemCameraTransforms.TransformType.GROUND, i, i1, matrixStack, iRenderTypeBuffer);
             matrixStack.pop();
         }

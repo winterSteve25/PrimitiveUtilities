@@ -57,7 +57,7 @@ public class DryingRackTileEntity extends PrimUtilsTE implements IHasValidItems,
     @Override
     public boolean addItem(PlayerEntity player, ItemStack heldItem, BlockRayTraceResult hit) {
         for (int i = 0; i < getInvSize(); i++) {
-            if (itemHandler.getStackInSlot(i).isEmpty()) {
+            if (itemHandler.getStackInSlot(i).isEmpty() && outputHandler.getStackInSlot(i).isEmpty()) {
                 ItemStack itemAdd = heldItem.copy();
                 itemAdd.setCount(1);
                 itemHandler.insertItem(i, itemAdd, false);

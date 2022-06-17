@@ -2,6 +2,7 @@ package wintersteve25.primutils.client;
 
 import com.mojang.blaze3d.matrix.MatrixStack;
 import com.mojang.blaze3d.vertex.IVertexBuilder;
+import net.minecraft.block.BlockState;
 import net.minecraft.block.DirectionalBlock;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.renderer.*;
@@ -52,7 +53,11 @@ public class BasinTESR extends PrimUtilsGEOBlockRendererBase<BasinTileEntity> {
             if (basin.hasItem()) {
                 if (basin.getWorld() == null) return;
                 ItemRenderer itemRenderer = Minecraft.getInstance().getItemRenderer();
-                Direction direction = basin.getWorld().getBlockState(basin.getPos()).get(DirectionalBlock.FACING);
+
+                BlockState state = basin.getWorld().getBlockState(basin.getPos());
+                if (!state.hasProperty(DirectionalBlock.FACING)) return;
+                Direction direction = state.get(DirectionalBlock.FACING);
+
                 for(int i = 0; i < basin.getInvSize(); i++) {
                     ItemStack stack = basin.getItemHandler().getStackInSlot(i);
                     if (!stack.isEmpty()) {

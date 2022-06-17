@@ -20,6 +20,7 @@ import net.minecraftforge.common.ToolType;
 import net.minecraftforge.fluids.FluidUtil;
 import net.minecraftforge.fluids.capability.CapabilityFluidHandler;
 import net.minecraftforge.fluids.capability.IFluidHandler;
+import wintersteve25.primutils.common.init.PrimUtilsConfig;
 import wintersteve25.primutils.common.te.DryingRackTileEntity;
 
 import javax.annotation.Nullable;
@@ -37,7 +38,13 @@ public abstract class PrimUtilsInteractableBlock extends FCLibDirectionalBlock {
     public ActionResultType onBlockActivated(BlockState state, World worldIn, BlockPos pos, PlayerEntity player, Hand handIn, BlockRayTraceResult hit) {
         TileEntity tileEntity = worldIn.getTileEntity(pos);
         if (tileEntity instanceof PrimUtilsTE && tileEntity.getWorld() != null && !tileEntity.getWorld().isRemote()) {
-            ItemStack stack = player.getHeldItem(handIn);
+            ItemStack stack;
+
+            if (PrimUtilsConfig.isOnlyAcceptMainHandItem()) {
+                stack = player.getHeldItemMainhand();
+            } else {
+                stack = player.getHeldItem(handIn);
+            }
 
             if (tileEntity instanceof PrimUtilsFluidTE) {
                 PrimUtilsFluidTE fTe = (PrimUtilsFluidTE) tileEntity;

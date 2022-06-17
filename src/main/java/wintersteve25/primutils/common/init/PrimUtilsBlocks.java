@@ -118,7 +118,7 @@ public class PrimUtilsBlocks {
     };
     public static final RegistryObject<TileEntityType<MillStoneTileEntity>> MILLSTONE_TE = Registration.TE.register(MiscHelper.langToReg(MILLSTONE_ID), () -> TileEntityType.Builder.create(MillStoneTileEntity::new, MILLSTONE).build(null));
 
-    public static final PrimUtilsInteractableBlock DRYING_RACK = new PrimUtilsInteractableBlock(AbstractBlock.Properties.create(Material.WOOD).sound(SoundType.WOOD).harvestTool(ToolType.AXE).hardnessAndResistance(2.f, 1.4f).setRequiresTool().setOpaque((state, world, pos) -> false).setBlocksVision((state, world, pos) -> false), DRYING_RACK_ID) {
+    public static final PrimUtilsInteractableBlock DRYING_RACK = new PrimUtilsInteractableBlock(AbstractBlock.Properties.create(Material.WOOD).sound(SoundType.WOOD).harvestTool(ToolType.AXE).hardnessAndResistance(2.f, 1.4f).setOpaque((state, world, pos) -> false).setBlocksVision((state, world, pos) -> false), DRYING_RACK_ID) {
         @Override
         public TileEntityType<?> getTileType() {
             return DRYING_RACK_TE.get();
@@ -145,7 +145,7 @@ public class PrimUtilsBlocks {
     };
     public static final RegistryObject<TileEntityType<DryingRackTileEntity>> DRYING_RACK_TE = Registration.TE.register(MiscHelper.langToReg(DRYING_RACK_ID), () -> TileEntityType.Builder.create(DryingRackTileEntity::new, DRYING_RACK).build(null));
 
-    public static final PrimUtilsInteractableBlock CHOPPING_BLOCK = new PrimUtilsInteractableBlock(AbstractBlock.Properties.create(Material.WOOD).sound(SoundType.WOOD).harvestTool(ToolType.AXE).hardnessAndResistance(2.f, 0.8f).setRequiresTool(), CHOPPING_BLOCK_ID) {
+    public static final PrimUtilsInteractableBlock CHOPPING_BLOCK = new PrimUtilsInteractableBlock(AbstractBlock.Properties.create(Material.WOOD).sound(SoundType.WOOD).harvestTool(ToolType.AXE).hardnessAndResistance(2.f, 0.8f), CHOPPING_BLOCK_ID) {
         @Override
         public TileEntityType<?> getTileType() {
             return CHOPPING_BLOCK_TE.get();
@@ -158,7 +158,7 @@ public class PrimUtilsBlocks {
     };
     public static final RegistryObject<TileEntityType<ChoppingBlockTileEntity>> CHOPPING_BLOCK_TE = Registration.TE.register(MiscHelper.langToReg(CHOPPING_BLOCK_ID), () -> TileEntityType.Builder.create(ChoppingBlockTileEntity::new, CHOPPING_BLOCK).build(null));
 
-    public static final PrimUtilsInteractableBlock BASIN = new PrimUtilsInteractableBlock(AbstractBlock.Properties.create(Material.WOOD).sound(SoundType.WOOD).harvestTool(ToolType.AXE).hardnessAndResistance(2.f, 0.8f).setRequiresTool().setOpaque((var, var1, var2)->false), BASIN_ID) {
+    public static final PrimUtilsInteractableBlock BASIN = new PrimUtilsInteractableBlock(AbstractBlock.Properties.create(Material.WOOD).sound(SoundType.WOOD).harvestTool(ToolType.AXE).hardnessAndResistance(2.f, 0.8f).setOpaque((var, var1, var2)->false), BASIN_ID) {
         @Override
         public TileEntityType<?> getTileType() {
             return BASIN_TE.get();

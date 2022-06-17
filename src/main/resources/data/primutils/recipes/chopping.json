@@ -1,0 +1,11 @@
+{
+  "type": "primutils:chopping",
+  "chopAmounts": 2,
+  "input": {
+    "item": "minecraft:andesite_wall"
+  },
+  "output": {
+    "item": "minecraft:iron_ingot",
+    "count": 2
+  }
+}

@@ -19,6 +19,7 @@ public class PrimUtilsConfig {
     private static boolean enableChoppingBlock;
     private static boolean enableBasin;
     private static boolean basinAllowStack;
+    private static boolean onlyAcceptMainHandItem;
 
     public static void read() {
         if (!file.exists()) {
@@ -35,6 +36,7 @@ public class PrimUtilsConfig {
                     enableChoppingBlock = c.isEnableChoppingBlock();
                     enableBasin = c.isEnableBasin();
                     basinAllowStack = c.isBasinAllowStack();
+                    onlyAcceptMainHandItem = c.isOnlyAcceptMainHandItem();
                 }
             } catch (FileNotFoundException e) {
                 PrimitiveUtils.LOGGER.warn("Config file not found! Creating a new one..");
@@ -47,7 +49,7 @@ public class PrimUtilsConfig {
     public static void write() {
         if (!file.exists()) {
             PrintWriter writer = JsonUtils.createWriter(file, PrimitiveUtils.LOGGER);
-            writer.print(JsonUtils.getGson().toJson(new Config(true, true, true, true, false)));
+            writer.print(JsonUtils.getGson().toJson(new Config(true, true, true, true, false, onlyAcceptMainHandItem)));
             writer.close();
         }
     }
@@ -72,19 +74,25 @@ public class PrimUtilsConfig {
         return basinAllowStack;
     }
 
+    public static boolean isOnlyAcceptMainHandItem() {
+        return onlyAcceptMainHandItem;
+    }
+
     private static class Config {
         private final boolean enableMillstone;
         private final boolean enableDryingRack;
         private final boolean enableChoppingBlock;
         private final boolean enableBasin;
         private final boolean basinAllowStack;
+        private final boolean onlyAcceptMainHandItem;
 
-        private Config(boolean enableMillstone, boolean enableDryingRack, boolean enableChoppingBlock, boolean enableBasin, boolean basinAllowStack) {
+        private Config(boolean enableMillstone, boolean enableDryingRack, boolean enableChoppingBlock, boolean enableBasin, boolean basinAllowStack, boolean onlyAcceptMainHandItem) {
             this.enableMillstone = enableMillstone;
             this.enableDryingRack = enableDryingRack;
             this.enableChoppingBlock = enableChoppingBlock;
             this.enableBasin = enableBasin;
             this.basinAllowStack = basinAllowStack;
+            this.onlyAcceptMainHandItem = onlyAcceptMainHandItem;
         }
 
         public boolean isEnableMillstone() {
@@ -105,6 +113,10 @@ public class PrimUtilsConfig {
 
         public boolean isBasinAllowStack() {
             return basinAllowStack;
+        }
+
+        public boolean isOnlyAcceptMainHandItem() {
+            return onlyAcceptMainHandItem;
         }
     }
 }

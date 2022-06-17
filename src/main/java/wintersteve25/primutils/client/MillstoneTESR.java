@@ -1,6 +1,7 @@
 package wintersteve25.primutils.client;
 
 import com.mojang.blaze3d.matrix.MatrixStack;
+import net.minecraft.block.BlockState;
 import net.minecraft.block.DirectionalBlock;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.renderer.IRenderTypeBuffer;
@@ -28,7 +29,12 @@ public class MillstoneTESR extends PrimUtilsGEOBlockRendererBase<MillStoneTileEn
             ItemStack inputItem = millstone.getItemHandler().getStackInSlot(0);
             if (!inputItem.isEmpty()) {
                 matrixStackIn.push();
-                inputMatrix(matrixStackIn, tile.getWorld().getBlockState(tile.getPos()).get(DirectionalBlock.FACING), itemRenderer.getItemModelWithOverrides(inputItem, tile.getWorld(), null).isGui3d());
+
+                BlockState state = tile.getWorld().getBlockState(tile.getPos());
+                if (!state.hasProperty(DirectionalBlock.FACING)) return;
+                Direction direction = state.get(DirectionalBlock.FACING);
+
+                inputMatrix(matrixStackIn, direction, itemRenderer.getItemModelWithOverrides(inputItem, tile.getWorld(), null).isGui3d());
                 itemRenderer.renderItem(inputItem, ItemCameraTransforms.TransformType.GROUND, combinedLightIn, combinedOverlayIn, matrixStackIn, bufferIn);
                 matrixStackIn.pop();
             }
