@@ -4,7 +4,7 @@ buildscript {
         mavenCentral()
     }
     dependencies {
-        classpath group: 'net.minecraftforge.gradle', name: 'ForgeGradle', version: '3.+', changing: true
+        classpath group: 'net.minecraftforge.gradle', name: 'ForgeGradle', version: '5.1.+', changing: true
     }
 }
 apply plugin: 'net.minecraftforge.gradle'
@@ -89,13 +89,13 @@ repositories {
 }
 
 dependencies {
-    minecraft 'net.minecraftforge:forge:1.16.5-36.2.20'
-    compile fg.deobf("curse.maven:fclib-497404:3567946")
-    compile fg.deobf("mcjty.theoneprobe:TheOneProbe-1.16:1.16-3.1.4-22")
+    minecraft 'net.minecraftforge:forge:1.16.5-36.2.34'
+    implementation fg.deobf("curse.maven:fclib-497404:3567946")
+    implementation fg.deobf("mcjty.theoneprobe:TheOneProbe-1.16:1.16-3.1.4-22")
     implementation fg.deobf('software.bernie.geckolib:geckolib-forge-1.16.5:3.0.40')
     implementation fg.deobf("mezz.jei:jei-${jei_version}")
     compileOnly fg.deobf("mezz.jei:jei-${jei_version}:api")
-    compile fg.deobf("com.blamejared.crafttweaker:CraftTweaker-1.16.5:${ct_version}")
+    implementation fg.deobf("com.blamejared.crafttweaker:CraftTweaker-1.16.5:${ct_version}")
 }
 
 // Example for how to get properties into the manifest for reading by the runtime..

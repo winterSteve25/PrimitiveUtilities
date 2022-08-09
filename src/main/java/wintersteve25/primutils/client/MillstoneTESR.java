@@ -28,12 +28,12 @@ public class MillstoneTESR extends PrimUtilsGEOBlockRendererBase<MillStoneTileEn
             ItemRenderer itemRenderer = Minecraft.getInstance().getItemRenderer();
             ItemStack inputItem = millstone.getItemHandler().getStackInSlot(0);
             if (!inputItem.isEmpty()) {
-                matrixStackIn.push();
 
                 BlockState state = tile.getWorld().getBlockState(tile.getPos());
                 if (!state.hasProperty(DirectionalBlock.FACING)) return;
                 Direction direction = state.get(DirectionalBlock.FACING);
 
+                matrixStackIn.push();
                 inputMatrix(matrixStackIn, direction, itemRenderer.getItemModelWithOverrides(inputItem, tile.getWorld(), null).isGui3d());
                 itemRenderer.renderItem(inputItem, ItemCameraTransforms.TransformType.GROUND, combinedLightIn, combinedOverlayIn, matrixStackIn, bufferIn);
                 matrixStackIn.pop();
