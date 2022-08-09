@@ -24,12 +24,12 @@ public class ChoppingBlockTESR extends TileEntityRenderer<ChoppingBlockTileEntit
         if (tile.getWorld() != null) {
             ItemRenderer itemRenderer = Minecraft.getInstance().getItemRenderer();
             ItemStack inputItem = tile.getItemHandler().getStackInSlot(0);
-            matrixStack.push();
 
             BlockState state = tile.getWorld().getBlockState(tile.getPos());
             if (!state.hasProperty(DirectionalBlock.FACING)) return;
             Direction direction = state.get(DirectionalBlock.FACING);
 
+            matrixStack.push();
             setupMatrix(matrixStack, direction, itemRenderer.getItemModelWithOverrides(inputItem, tile.getWorld(), null).isGui3d());
             itemRenderer.renderItem(inputItem, ItemCameraTransforms.TransformType.GROUND, i, i1, matrixStack, iRenderTypeBuffer);
             matrixStack.pop();

@@ -91,7 +91,6 @@ repositories {
 dependencies {
     minecraft 'net.minecraftforge:forge:1.16.5-36.2.34'
     implementation fg.deobf("curse.maven:fclib-497404:3567946")
-    implementation fg.deobf("curse.maven:byg-247560:3485079")
     implementation fg.deobf("mcjty.theoneprobe:TheOneProbe-1.16:1.16-3.1.4-22")
     implementation fg.deobf('software.bernie.geckolib:geckolib-forge-1.16.5:3.0.40')
     implementation fg.deobf("mezz.jei:jei-${jei_version}")
